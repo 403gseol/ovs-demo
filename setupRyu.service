@@ -1,0 +1,11 @@
+[Unit]
+Description=Start Ryu
+Wants=sys-subsystem-net-devices-vcan0.device
+After=network.target network-online.target NetworkManager.service
+
+
+[Service]
+ExecStart=ryu-manager --verbose /usr/local/lib/python3.8/dist-packages/ryu/app/example_switch_13.py
+
+[Install]
+WantedBy=multi-user.target

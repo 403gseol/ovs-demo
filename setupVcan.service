@@ -1,0 +1,11 @@
+[Unit]
+Description=SetupVCAN
+Wants=sys-subsystem-net-devices-vcan0.device
+After=network.target network-online.target NetworkManager.service
+
+
+[Service]
+ExecStart=/usr/sbin/setupVCAN0.sh
+
+[Install]
+WantedBy=multi-user.target
