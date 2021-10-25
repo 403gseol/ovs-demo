@@ -9,6 +9,9 @@ sudo ovs-vsctl del-br br0
 sudo ovs-vsctl add-br br0
 sudo ovs-vsctl add-port br0 enp0s8
 sudo ip address add 172.20.0.2/24 dev br0
+sudo ip address flush enp0s8
+sudo ip address add 192.168.100.11/24 dev br0
+sudo ip link set dev br0 up
 sudo ovs-vsctl set-fail-mode br0 secure
 sudo ovs-vsctl set-controller br0 tcp:172.20.0.2:6633
 
